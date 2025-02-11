@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Romântica</title>
+    <style>
+        body {
+            background-color: #ffc0cb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .envelope {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            background-color: #ff6699;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .message {
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .envelope.open {
+            transform: translateY(-20px);
+        }
+
+        .envelope.open .message {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="abrirCarta()">
+        <div class="message">❤️ Oi gatinho, você é especial para mim! ❤️</div>
+    </div>
+
+    <script>
+        function abrirCarta() {
+            document.querySelector('.envelope').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
